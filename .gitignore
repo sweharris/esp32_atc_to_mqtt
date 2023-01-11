@@ -1,4 +1,4 @@
-atc_to_mqtt.ino.*
+esp32_atc_to_mqtt.ino.*
 network_conn.h
 mac_to_name.h
 debug.cfg
