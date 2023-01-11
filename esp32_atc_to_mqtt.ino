@@ -88,7 +88,7 @@ class ScanCallBack : public BLEAdvertisedDeviceCallbacks
 
     Serial.println("====Entering====");
 
-    String topic = "new_atc/" + mac;
+    String topic = _mqttBase + mac;
     Serial.println("Topic: " + topic);
 
     time_t now = time(nullptr);
