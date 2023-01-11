@@ -24,7 +24,7 @@
 #include <time.h>
 #include "network_conn.h"
 
-#define _mqttBase    "new_atc/"
+#define _mqttBase    "atc/"
 
 // For MQTT
 WiFiClient espClient;
