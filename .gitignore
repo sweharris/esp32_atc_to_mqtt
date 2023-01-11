@@ -1,0 +1,6 @@
+atc_to_mqtt.ino.*
+network_conn.h
+mac_to_name.h
+debug.cfg
+debug_custom.json
+esp32.svd
