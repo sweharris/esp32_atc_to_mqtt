@@ -31,10 +31,10 @@ The JSON format is
 
     {
       "rx_by": "10.20.30.40",
-      "time": 1635948316,
-      "date": "Wed Jan 11 01:40:58 2023",
+      "time": 1673443719,
+      "date": "Wed Jan 11 13:28:39 2023",
       "mac": "123456789abc",
-      "name": "ATC_789abc",
+      "name": "Kitchen",
       "tempC": 20.9,
       "tempF": 69.6,
       "humidity": 39,
@@ -66,9 +66,9 @@ in order to provide details of your network and MQTT server.
 Next you will need to create a file `mac_to_name.h`.  This is a simple
 list of entries such as
 
-   mac_names["a4c138b12345"]="Kitchen";
-   mac_names["a4c138812346"]="Bedroom";
-   mac_names["a4c138a12347"]="Bathroom";
+    mac_names["a4c138b12345"]="Kitchen";
+    mac_names["a4c138812346"]="Bedroom";
+    mac_names["a4c138a12347"]="Bathroom";
 
 The key to the array is the MAC address (without :).  If you create a
 blank file then the `name` entries in the JSON will just be `""`.
