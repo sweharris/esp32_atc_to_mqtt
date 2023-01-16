@@ -89,6 +89,13 @@ but it allows for the Bluetooth sensors to be placed distributed; no
 worries about being close to a central receiver.
 
 ---
+# atc_monitor.sh
+
+This is a "monitor" app that will report on what is seen on the MQTT
+server.  It can be useful to see if the ESP32s are properly reporting
+in, and that each sensor is still sending.
+
+---
 
 (c) Stephen Harris, Jan 2023
 MIT licensed.  See LICENSE file
