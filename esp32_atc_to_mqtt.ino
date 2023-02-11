@@ -230,6 +230,9 @@ void BLEscanaloop( void * pvParameters )
   }
 }
 
+// How many times have we failed to connect to MQTT
+int fail=0;
+
 // This loop now just ensures MQTT is kept alive.  Connect if not
 // connected.
 void loop()
@@ -237,6 +240,15 @@ void loop()
   // Try to reconnect to MQTT, in case we disconnected
   if (!client.connected())
   {
+    fail++;
+    Serial.print("MQTT lost, detection: ");
+    Serial.println(fail);
+
+    // If we fail to connect too often, maybe we've lost the network?
+    // Let's reboot.  The 1 second delay gives us 30 attempts.
+    if (fail > 30) { Serial.println("Rebooting"); ESP.restart(); }
+    delay(1000);
+
     // Generate a random ID each time
     String clientId = "ESP32Client-" + String(random(0xffff), HEX);
 
@@ -249,6 +261,7 @@ void loop()
       msg.trim();
       msg += ".  I am " + WiFi.localIP().toString();
       Serial.println(msg);
+      fail=0;
     }
     else
     {
